@@ -104,51 +104,98 @@ const education =
       ];
 
 // Skills organized by categories
-const skills = {
-  programming: [
-    { name: "HTML", icon: "html" },
-    { name: "CSS", icon: "css" },
-    { name: "JavaScript", icon: "javascript" },
-    { name: "TypeScript", icon: "typescript" },
-    { name: "React", icon: "react" },
-    { name: "Next.js", icon: "nextjs" },
-    { name: "Astro", icon: "astro" },
-    { name: "Node.js", icon: "node" },
-    { name: "Python", icon: "python" },
-    { name: "Java", icon: "java" },
-    { name: "Kotlin", icon: "kotlin" },
-    { name: "MySQL", icon: "mysql" },
-    { name: "Git", icon: "git" },
-  ],
-  digitalMarketing: [
-    { name: "Project Management", icon: "📋" },
-    { name: "Website Optimization", icon: "🔍" },
-    { name: "SEO Strategies", icon: "📈" },
-  ],
-  software: [
-    { name: "Figma", icon: "🎨" },
-    { name: "Trello", icon: "📌" },
-    { name: "Slack", icon: "💬" },
-    { name: "Todoist", icon: "✅" },
-    { name: "Matlab", icon: "📊" },
-  ],
-  seo: [
-    { name: "Google Search Console", icon: "🔍" },
-    { name: "Google Analytics", icon: "📊" },
-    { name: "Meta Pixel", icon: "📱" },
-    { name: "Google Tag Manager", icon: "🏷️" },
-  ],
-  interpersonal: [
-    { name: "Presentation", icon: "🎤" },
-    { name: "Planning", icon: "📅" },
-    { name: "Organized", icon: "📋" },
-    { name: "Creative problem solving", icon: "💡" },
-    { name: "Team player", icon: "👥" },
-    { name: "Active listening", icon: "👂" },
-    { name: "Adaptability", icon: "🔄" },
-    { name: "Analytical thinking", icon: "🧠" },
-  ],
-};
+const skills =
+  URL === "/en/"
+    ? {
+        programming: [
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Astro", icon: "astro" },
+          { name: "Node.js", icon: "node" },
+          { name: "Python", icon: "python" },
+          { name: "Java", icon: "java" },
+          { name: "Kotlin", icon: "kotlin" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "Git", icon: "git" },
+        ],
+        digitalMarketing: [
+          { name: "Project Management", icon: "📋" },
+          { name: "Website Optimization", icon: "🔍" },
+          { name: "SEO Strategies", icon: "📈" },
+        ],
+        software: [
+          { name: "Figma", icon: "🎨" },
+          { name: "Trello", icon: "📌" },
+          { name: "Slack", icon: "💬" },
+          { name: "Todoist", icon: "✅" },
+          { name: "Matlab", icon: "📊" },
+        ],
+        seo: [
+          { name: "Google Search Console", icon: "🔍" },
+          { name: "Google Analytics", icon: "📊" },
+          { name: "Meta Pixel", icon: "📱" },
+          { name: "Google Tag Manager", icon: "🏷️" },
+        ],
+        interpersonal: [
+          { name: "Presentation", icon: "🎤" },
+          { name: "Planning", icon: "📅" },
+          { name: "Organized", icon: "📋" },
+          { name: "Creative problem solving", icon: "💡" },
+          { name: "Team player", icon: "👥" },
+          { name: "Active listening", icon: "👂" },
+          { name: "Adaptability", icon: "🔄" },
+          { name: "Analytical thinking", icon: "🧠" },
+        ],
+      }
+    : {
+        programming: [
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "React", icon: "react" },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "Astro", icon: "astro" },
+          { name: "Node.js", icon: "node" },
+          { name: "Python", icon: "python" },
+          { name: "Java", icon: "java" },
+          { name: "Kotlin", icon: "kotlin" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "Git", icon: "git" },
+        ],
+        digitalMarketing: [
+          { name: "Gestión de Proyectos", icon: "📋" },
+          { name: "Optimización Web", icon: "🔍" },
+          { name: "Estrategias SEO", icon: "📈" },
+        ],
+        software: [
+          { name: "Figma", icon: "🎨" },
+          { name: "Trello", icon: "📌" },
+          { name: "Slack", icon: "💬" },
+          { name: "Todoist", icon: "✅" },
+          { name: "Matlab", icon: "📊" },
+        ],
+        seo: [
+          { name: "Google Search Console", icon: "🔍" },
+          { name: "Google Analytics", icon: "📊" },
+          { name: "Meta Pixel", icon: "📱" },
+          { name: "Google Tag Manager", icon: "🏷️" },
+        ],
+        interpersonal: [
+          { name: "Presentación", icon: "🎤" },
+          { name: "Planificación", icon: "📅" },
+          { name: "Organizado", icon: "📋" },
+          { name: "Resolución creativa de problemas", icon: "💡" },
+          { name: "Trabajo en equipo", icon: "👥" },
+          { name: "Escucha activa", icon: "👂" },
+          { name: "Adaptabilidad", icon: "🔄" },
+          { name: "Pensamiento analítico", icon: "🧠" },
+        ],
+      };
 ---
 
 <section class="space-y-12">
