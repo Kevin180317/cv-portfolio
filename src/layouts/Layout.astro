@@ -1,6 +1,9 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
 import "@fontsource-variable/m-plus-1-code";
+
+const URL = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -15,16 +18,28 @@ import "@fontsource-variable/m-plus-1-code";
       name="google-site-verification"
       content="5fVEbZ5cWkQ4WsrEX_ez1qHuDPAdl9IlDJ75I9X81Lw"
     />
+    <ClientRouter />
   </head>
-  <body class="max-w-4xl mx-auto">
+  <body class="max-w-4xl mx-auto text-black bg-white px-6">
     <slot />
+    <footer>
+      <section
+        class="flex justify-between items-center py-6 mt-6 border-t border-gray-200"
+      >
+        <p class="text-gray-600">
+          {new Date().getFullYear()} Okhuysen Dev.
+        </p>
+        <p class="text-gray-500 text-sm">
+          {URL === "/en/" ? "Made with ❤️ " : "Hecho con ❤️ "}
+        </p>
+      </section>
+    </footer>
   </body>
 </html>
 
 <style>
   html {
     scroll-behavior: smooth;
-    background-color: black;
   }
   body {
     font-family: "M PLUS 1 Code Variable", monospace;

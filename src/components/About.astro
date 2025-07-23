@@ -1,0 +1,29 @@
+---
+const { URL } = Astro.props;
+---
+
+<section>
+  <h2 class="text-2xl font-bold text-orange-600 mb-4">
+    {URL === "/en/" ? "About Me" : "Sobre Mí"}
+  </h2>
+
+  <p class="text-lg text-gray-600 leading-relaxed text-start mb-8">
+    {
+      URL === "/en/"
+        ? "FullStack developer specialized in mobile applications and web development with 4+ years of experience in the area of new technologies and development for different companies and/or clients in the IT market."
+        : "Desarrollador FullStack especializado en aplicaciones móviles y desarrollo web con más de 4 años de experiencia en el área de nuevas tecnologías y desarrollo para diferentes empresas y/o clientes en el mercado de TI."
+    }
+  </p>
+
+  <h3 class="text-2xl font-bold text-orange-600 mb-4">
+    {URL === "/en/" ? "Areas of Expertise" : "Áreas de Especialización"}
+  </h3>
+
+  <p class="text-gray-600 leading-relaxed mb-8">
+    {
+      URL === "/en/"
+        ? "Web Development • Mobile Development • Frontend • Backend • CSS Frameworks • API Rest • Databases • SEO • Analytics • Version Control • Authentication • Credentials • Cpanel"
+        : "Desarrollo Web • Desarrollo Móvil • Frontend • Backend • Frameworks CSS • API Rest • Bases de Datos • SEO • Analytics • Control de Versiones • Autenticación • Credenciales • Cpanel"
+    }
+  </p>
+</section>

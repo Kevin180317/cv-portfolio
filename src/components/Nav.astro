@@ -1,0 +1,32 @@
+---
+const { URL } = Astro.props;
+---
+
+<nav class="flex justify-between items-center py-8">
+  <span
+    class="uppercase hover:text-orange-500 transition transform hover:duration-150"
+  >
+    Okhuysen Dev
+  </span>
+
+  <div>
+    <ul>
+      <li class="inline-block mr-4">
+        <a
+          href="/en/"
+          class={`hover:underline hover:text-orange-500 ${URL === "/en/" ? "text-orange-500" : ""}`}
+        >
+          English
+        </a>
+      </li>
+      <li class="inline-block mr-4">
+        <a
+          href="/"
+          class={`hover:underline hover:text-orange-500 ${URL === "/en/" ? "" : "text-orange-500"}`}
+        >
+          Español
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
