@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://okhuysen.dev",
+  site: "https://okhuysen.me",
   integrations: [sitemap(), robotsTxt()],
 
   vite: {
