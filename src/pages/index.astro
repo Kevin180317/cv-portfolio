@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Logo from "@/assets/Logo.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <nav class="flex justify-between items-center p-4 text-white">
+    <figure class="flex items-center gap-2">
+      <Logo class="w-16 h-16 bg-white rounded-xl fill-orange-500" />
+      <span class="uppercase"> Okhuysen Dev </span>
+    </figure>
+    <div>
+      <ul>
+        <li class="inline-block mr-4">
+          <a href="#about" class="hover:underline">Sobre mí</a>
+        </li>
+        <li class="inline-block mr-4">
+          <a href="#projects" class="hover:underline">Proyectos</a>
+        </li>
+        <li class="inline-block mr-4">
+          <a href="#contact" class="hover:underline">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </Layout>
