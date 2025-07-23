@@ -16,48 +16,92 @@ import Java from "@/assets/icons/Java.astro";
 const { URL } = Astro.props;
 
 // Professional Experience
-const experience = [
-  {
-    title: "Front-end & Back-end Developer",
-    company: "Ecommetrica",
-    period: "September 2023 - Present",
-    responsibilities: [
-      "Front-end web development with React js, Vite js, Next js, Astro js",
-      "Back-end development with Express, ApiREST, JWT, Oauth, MySQL",
-      "User interfaces using figma and task control or ticker using Todoist platform",
-      "SEO through Google Analytics, Meta Pixel and Google Tag Manager",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "Cenyca University",
-    period: "October 2022 - July 2023",
-    responsibilities: [
-      "Development of a web platform with a student focus divided in 3 modules Students, Teachers and Academic Control",
-      "All this developed with laravel PHP/Vue js - Tailwindcss – MySQL",
-    ],
-  },
-  {
-    title: "Mobile App Developer",
-    company: "Prometheus FreeLancer",
-    period: "",
-    responsibilities: [
-      "We developed a mobile app for people in Paliativos care where they required an Android/iOS app in order for patients to schedule appointments with an extensive catalog of doctors with a similar flow to what doctoralia has",
-      "The app was developed in Android Java - iOS Swift connected to Google Firebase using the OneSignal Api for the Push Notifications method",
-    ],
-  },
-];
+const experience =
+  URL === "/en/"
+    ? [
+        {
+          title: "Front-end & Back-end Developer",
+          company: "Ecommetrica",
+          period: "September 2023 - Present",
+          responsibilities: [
+            "Front-end web development with React js, Vite js, Next js, Astro js",
+            "Back-end development with Express, ApiREST, JWT, Oauth, MySQL",
+            "User interfaces using Figma and task control with Todoist platform",
+            "SEO through Google Analytics, Meta Pixel and Google Tag Manager",
+          ],
+        },
+        {
+          title: "Full Stack Developer",
+          company: "Cenyca University",
+          period: "October 2022 - July 2023",
+          responsibilities: [
+            "Development of a web platform focused on students, divided into 3 modules: Students, Teachers and Academic Control",
+            "All developed with Laravel PHP/Vue js - Tailwind CSS – MySQL",
+          ],
+        },
+        {
+          title: "Mobile App Developer",
+          company: "Prometheus Freelancer",
+          period: "",
+          responsibilities: [
+            "We developed a mobile app for people in palliative care that allowed patients to schedule appointments with a wide catalog of doctors, with a flow similar to Doctoralia",
+            "The app was developed in Android Java and iOS Swift, connected to Google Firebase and OneSignal API for push notifications",
+          ],
+        },
+      ]
+    : [
+        {
+          title: "Desarrollador Front-end & Back-end",
+          company: "Ecommetrica",
+          period: "Septiembre 2023 - Presente",
+          responsibilities: [
+            "Desarrollo web Front-end con React js, Vite js, Next js, Astro js",
+            "Desarrollo Back-end con Express, ApiREST, JWT, Oauth, MySQL",
+            "Interfaces de usuario con Figma y control de tareas con la plataforma Todoist",
+            "SEO mediante Google Analytics, Meta Pixel y Google Tag Manager",
+          ],
+        },
+        {
+          title: "Desarrollador Full Stack",
+          company: "Universidad Cenyca",
+          period: "Octubre 2022 - Julio 2023",
+          responsibilities: [
+            "Desarrollo de una plataforma web enfocada en estudiantes dividida en 3 módulos: Alumnos, Docentes y Control Académico",
+            "Todo desarrollado con Laravel PHP/Vue js - Tailwind CSS – MySQL",
+          ],
+        },
+        {
+          title: "Desarrollador de Aplicaciones Móviles",
+          company: "Prometheus Freelancer",
+          period: "",
+          responsibilities: [
+            "Desarrollamos una app móvil para personas en cuidados paliativos que permitía agendar citas con un catálogo amplio de doctores, con un flujo similar a Doctoralia",
+            "La app fue desarrollada en Android Java y iOS Swift, conectada con Google Firebase y la API de OneSignal para notificaciones push",
+          ],
+        },
+      ];
 
 // Education
-const education = [
-  {
-    title: "Lic. Tecnologías en Sistemas Inteligentes",
-    institution: "UDCI",
-    period: "2017-2021",
-    description:
-      "Relevant courses: Software and Hardware, introduction to python, line follower workshop, sprinter and juice bot from 5 to 15 kg",
-  },
-];
+const education =
+  URL === "/en/"
+    ? [
+        {
+          title: "Bachelor in Intelligent Systems Technologies",
+          institution: "UDCI",
+          period: "2017-2021",
+          description:
+            "Relevant courses: Software and Hardware, introduction to Python, line follower workshop, sprinter and juice bot from 5 to 15 kg",
+        },
+      ]
+    : [
+        {
+          title: "Lic. Tecnologías en Sistemas Inteligentes",
+          institution: "UDCI",
+          period: "2017-2021",
+          description:
+            "Cursos relevantes: Software y Hardware, introducción a Python, taller de seguidor de línea, sprinter y juice bot de 5 a 15 kg",
+        },
+      ];
 
 // Skills organized by categories
 const skills = {
