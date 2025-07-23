@@ -4,9 +4,6 @@ import "@/styles/global.css";
 import "@fontsource-variable/m-plus-1-code";
 
 const URL = Astro.url.pathname;
-const canonicalUrl = Astro.site
-  ? `${Astro.site}${URL}`
-  : `https://okhuysen.me${URL}`;
 ---
 
 <!doctype html>
@@ -25,7 +22,7 @@ const canonicalUrl = Astro.site
       name="keywords"
       content="Okhuysen, desarrollo web, desarrollador full stack, frontend, backend, JavaScript, React, Next.js, Node.js, SEO, programador México"
     />
-    <link rel="canonical" href={canonicalUrl} />
+    <link rel="canonical" href={Astro.site} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Kevin Okhuysen" />
     <meta name="publisher" content="Okhuysen Dev" />
@@ -50,7 +47,7 @@ const canonicalUrl = Astro.site
       content="Desarrollador web frontend y backend. Apasionado por la optimización, el SEO y la experiencia de usuario. ¡Hagamos realidad tu proyecto!"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={Astro.site} />
 
     <ClientRouter />
   </head>
