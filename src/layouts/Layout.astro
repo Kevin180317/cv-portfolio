@@ -4,20 +4,54 @@ import "@/styles/global.css";
 import "@fontsource-variable/m-plus-1-code";
 
 const URL = Astro.url.pathname;
+const canonicalUrl = Astro.site
+  ? `${Astro.site}${URL}`
+  : `https://okhuysen.me${URL}`;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO BÁSICO -->
+    <title>Okhuysen Dev | Desarrollo Web Frontend y Backend</title>
+    <meta
+      name="description"
+      content="Soy Okhuysen, desarrollador Full Stack especializado en aplicaciones modernas, optimizadas y responsivas. Transformo ideas en productos web efectivos y rápidos. ¡Conóceme!"
+    />
+    <meta
+      name="keywords"
+      content="Okhuysen, desarrollo web, desarrollador full stack, frontend, backend, JavaScript, React, Next.js, Node.js, SEO, programador México"
+    />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kevin Okhuysen" />
+    <meta name="publisher" content="Okhuysen Dev" />
     <meta name="generator" content={Astro.generator} />
-    <title>Okhuysen Dev</title>
+
+    <!-- VERIFICACIÓN GOOGLE -->
     <meta
       name="google-site-verification"
       content="5fVEbZ5cWkQ4WsrEX_ez1qHuDPAdl9IlDJ75I9X81Lw"
     />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- META SOCIALES: Open Graph -->
+    <meta
+      property="og:title"
+      content="Okhuysen Dev | Desarrollo Web Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Desarrollador web frontend y backend. Apasionado por la optimización, el SEO y la experiencia de usuario. ¡Hagamos realidad tu proyecto!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+
     <ClientRouter />
   </head>
   <body class="max-w-4xl mx-auto text-black bg-white px-6">
