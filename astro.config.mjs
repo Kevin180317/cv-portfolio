@@ -11,7 +11,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://okhuysen.me/",
   integrations: [sitemap(), robotsTxt()],
-
+  //tailwind
   vite: {
     plugins: [tailwindcss()],
   },
