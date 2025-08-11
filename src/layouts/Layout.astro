@@ -2,7 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
 import "@fontsource-variable/m-plus-1-code";
-
+import Analytics from "@vercel/analytics/astro";
 const URL = Astro.url.pathname;
 ---
 
@@ -53,6 +53,7 @@ const URL = Astro.url.pathname;
       content="https://okhuysen.me/opengraph-image.png"
     />
     <meta property="og:site_name" content="Okhuysen.me" />
+    <Analytics />
     <ClientRouter />
   </head>
   <body class="max-w-4xl mx-auto text-black bg-white px-6">
