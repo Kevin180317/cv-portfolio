@@ -4,6 +4,7 @@ import "@/styles/global.css";
 import "@fontsource-variable/m-plus-1-code";
 import Analytics from "@vercel/analytics/astro";
 const URL = Astro.url.pathname;
+import "@fontsource-variable/geist";
 ---
 
 <!doctype html>
@@ -77,7 +78,8 @@ const URL = Astro.url.pathname;
   html {
     scroll-behavior: smooth;
   }
-  body {
-    font-family: "M PLUS 1 Code Variable", monospace;
+
+  * {
+    font-family: "Geist Variable", sans-serif;
   }
 </style>
