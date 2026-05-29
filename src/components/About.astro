@@ -1,5 +1,14 @@
 ---
 const { URL } = Astro.props;
+
+function getYearsSince(startYear: number): number {
+  const now = new Date();
+  const years = now.getFullYear() - startYear;
+  const month = now.getMonth() + 1;
+  return month >= 1 ? years : years - 1;
+}
+
+const expYears = getYearsSince(2021);
 ---
 
 <section>
@@ -7,11 +16,27 @@ const { URL } = Astro.props;
     {URL === "/en/" ? "About Me" : "Sobre Mí"}
   </h2>
 
+  <p class="text-lg text-gray-600 leading-relaxed text-start mb-4">
+    {
+      URL === "/en/"
+        ? `+${expYears} years of professional experience as a Web and Mobile App Developer, with a specialized focus on digital solutions for the medical and dental sector. Based in Tijuana, Mexico.`
+        : `+${expYears} años de experiencia profesional como Desarrollador Web y de Aplicaciones Móviles, con un enfoque especializado en soluciones digitales para el sector médico y dental. Radicado en Tijuana, México.`
+    }
+  </p>
+
+  <p class="text-lg text-gray-600 leading-relaxed text-start mb-4">
+    {
+      URL === "/en/"
+        ? "I work with frontend ecosystems using React, Astro and Next.js, as well as backend environments with Node.js and Express. Experience in databases and deployment of modern, scalable solutions."
+        : "Manejo ecosistemas frontend con React, Astro y Next.js, así como entornos backend con Node.js y Express. Experiencia en bases de datos y despliegue de soluciones modernas y escalables."
+    }
+  </p>
+
   <p class="text-lg text-gray-600 leading-relaxed text-start mb-8">
     {
       URL === "/en/"
-        ? "FullStack developer specialized in mobile applications and web development with 4+ years of experience in the area of new technologies and development for different companies and/or clients in the IT market."
-        : "Desarrollador FullStack especializado en aplicaciones móviles y desarrollo web con más de 4 años de experiencia en el área de nuevas tecnologías y desarrollo para diferentes empresas y/o clientes en el mercado de TI."
+        ? "Passionate about creating fast, functional web experiences, with a focus on accessibility, performance, and good development practices."
+        : "Apasionado por crear experiencias web rápidas y funcionales, con enfoque en accesibilidad, rendimiento y buenas prácticas de desarrollo."
     }
   </p>
 

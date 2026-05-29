@@ -1,32 +1,47 @@
 ---
 const { URL } = Astro.props;
+const isEn = URL === "/en/";
 ---
 
 <nav class="flex justify-between items-center py-8">
-  <span
+  <a
+    href={isEn ? "/en/" : "/"}
     class="uppercase hover:text-orange-500 transition transform hover:duration-150"
   >
     Okhuysen Dev
-  </span>
+  </a>
 
-  <div>
-    <ul>
-      <li class="inline-block mr-4">
-        <a
-          href="/en/"
-          class={`hover:underline hover:text-orange-500 ${URL === "/en/" ? "text-orange-500" : ""}`}
-        >
-          English
-        </a>
-      </li>
-      <li class="inline-block mr-4">
-        <a
-          href="/"
-          class={`hover:underline hover:text-orange-500 ${URL === "/en/" ? "" : "text-orange-500"}`}
-        >
-          Español
-        </a>
-      </li>
-    </ul>
+  <div class="flex items-center gap-6">
+    <a
+      href={isEn ? "/en/" : "/"}
+      class={`text-sm hover:text-orange-500 transition-colors ${URL === "/" || URL === "/en/" ? "text-orange-500" : "text-gray-600"}`}
+    >
+      {isEn ? "Home" : "Inicio"}
+    </a>
+    <a
+      href={isEn ? "/en/#projects" : "/#projects"}
+      class="text-sm text-gray-600 hover:text-orange-500 transition-colors"
+    >
+      {isEn ? "Projects" : "Proyectos"}
+    </a>
+    <a
+      href={`mailto:okhuysen.dev@gmail.com`}
+      class="text-sm text-gray-600 hover:text-orange-500 transition-colors"
+    >
+      {isEn ? "Contact" : "Contacto"}
+    </a>
+    <span class="text-gray-300">|</span>
+    <a
+      href="/en/"
+      class={`text-sm hover:text-orange-500 transition-colors ${isEn ? "text-orange-500" : "text-gray-600"}`}
+    >
+      EN
+    </a>
+    <a
+      href="/"
+      class={`text-sm hover:text-orange-500 transition-colors ${!isEn ? "text-orange-500" : "text-gray-600"}`}
+    >
+      ES
+    </a>
   </div>
 </nav>
