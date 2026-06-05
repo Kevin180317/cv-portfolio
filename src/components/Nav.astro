@@ -3,45 +3,49 @@ const { URL } = Astro.props;
 const isEn = URL === "/en/";
 ---
 
-<nav class="flex justify-between items-center py-8">
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 -mx-6 px-6 py-4 mb-10 flex justify-between items-center">
   <a
     href={isEn ? "/en/" : "/"}
-    class="uppercase hover:text-orange-500 transition transform hover:duration-150"
+    class="text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors tracking-tight"
   >
-    Okhuysen Dev
+    Kevin Okhuysen
   </a>
 
-  <div class="flex items-center gap-6">
-    <a
-      href={isEn ? "/en/" : "/"}
-      class={`text-sm hover:text-orange-500 transition-colors ${URL === "/" || URL === "/en/" ? "text-orange-500" : "text-gray-600"}`}
-    >
-      {isEn ? "Home" : "Inicio"}
-    </a>
+  <div class="flex items-center gap-5">
     <a
       href={isEn ? "/en/#projects" : "/#projects"}
-      class="text-sm text-gray-600 hover:text-orange-500 transition-colors"
+      class="text-sm text-gray-500 hover:text-orange-500 transition-colors"
     >
       {isEn ? "Projects" : "Proyectos"}
     </a>
     <a
-      href={`mailto:okhuysen.dev@gmail.com`}
-      class="text-sm text-gray-600 hover:text-orange-500 transition-colors"
+      href={isEn ? "/en/#experience" : "/#experience"}
+      class="text-sm text-gray-500 hover:text-orange-500 transition-colors"
+    >
+      {isEn ? "Experience" : "Experiencia"}
+    </a>
+    <a
+      href="mailto:okhuysen.dev@gmail.com"
+      class="text-sm text-gray-500 hover:text-orange-500 transition-colors"
     >
       {isEn ? "Contact" : "Contacto"}
     </a>
-    <span class="text-gray-300">|</span>
+
+    <span class="w-px h-4 bg-gray-200"></span>
+
     <a
-      href="/en/"
-      class={`text-sm hover:text-orange-500 transition-colors ${isEn ? "text-orange-500" : "text-gray-600"}`}
+      href={isEn ? "/" : "/en/"}
+      class="text-xs font-medium px-2.5 py-1 rounded-md border border-gray-200 text-gray-500 hover:border-orange-400 hover:text-orange-500 transition-all"
     >
-      EN
+      {isEn ? "ES" : "EN"}
     </a>
+
     <a
-      href="/"
-      class={`text-sm hover:text-orange-500 transition-colors ${!isEn ? "text-orange-500" : "text-gray-600"}`}
+      href="/cv.pdf"
+      target="_blank"
+      class="text-xs font-medium px-3 py-1.5 rounded-md bg-orange-500 hover:bg-orange-600 text-white transition-colors"
     >
-      ES
+      CV
     </a>
   </div>
 </nav>

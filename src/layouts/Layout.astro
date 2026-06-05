@@ -1,85 +1,62 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
-import "@fontsource-variable/m-plus-1-code";
+import "@fontsource-variable/geist";
 import Analytics from "@vercel/analytics/astro";
 const URL = Astro.url.pathname;
-import "@fontsource-variable/geist";
+const isEn = URL === "/en/";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={isEn ? "en" : "es"}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO BÁSICO -->
-    <title>Okhuysen Dev | Desarrollo Web Frontend y Backend</title>
-    <meta
-      name="description"
-      content="Soy Okhuysen, desarrollador Full Stack especializado en aplicaciones modernas, optimizadas y responsivas. Transformo ideas en productos web efectivos y rápidos. ¡Conóceme!"
-    />
-    <meta
-      name="keywords"
-      content="Okhuysen, desarrollo web, desarrollador full stack, frontend, backend, JavaScript, React, Next.js, Node.js, SEO, programador México"
-    />
+    <title>Kevin Okhuysen — Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer especializado en aplicaciones web y móviles modernas. React, Next.js, Node.js, Astro. Tijuana, México." />
+    <meta name="keywords" content="Okhuysen, desarrollo web, desarrollador full stack, frontend, backend, JavaScript, React, Next.js, Node.js, programador México" />
     <link rel="canonical" href={Astro.site} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Kevin Okhuysen" />
-    <meta name="publisher" content="Okhuysen Dev" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- VERIFICACIÓN GOOGLE -->
-    <meta
-      name="google-site-verification"
-      content="5fVEbZ5cWkQ4WsrEX_ez1qHuDPAdl9IlDJ75I9X81Lw"
-    />
-
-    <!-- FAVICON -->
+    <meta name="google-site-verification" content="5fVEbZ5cWkQ4WsrEX_ez1qHuDPAdl9IlDJ75I9X81Lw" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-    <!-- META SOCIALES: Open Graph -->
-    <meta
-      property="og:title"
-      content="Okhuysen Dev | Desarrollo Web Full Stack"
-    />
-    <meta
-      property="og:description"
-      content="Desarrollador web frontend y backend. Apasionado por la optimización, el SEO y la experiencia de usuario. ¡Hagamos realidad tu proyecto!"
-    />
+    <meta property="og:title" content="Kevin Okhuysen — Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer. React, Next.js, Node.js, Astro. Tijuana, México." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site} />
-    <meta
-      property="og:image"
-      content="https://okhuysen.me/opengraph-image.png"
-    />
-    <meta property="og:site_name" content="Okhuysen.me" />
+    <meta property="og:image" content="https://okhuysen.me/opengraph-image.png" />
     <Analytics />
     <ClientRouter />
   </head>
-  <body class="max-w-4xl mx-auto text-black bg-white px-6">
+  <body class="max-w-3xl mx-auto bg-white text-gray-900 px-6 antialiased">
     <slot />
-    <footer>
-      <section
-        class="flex justify-between items-center py-6 mt-6 border-t border-gray-200"
-      >
-        <p class="text-gray-600">
-          {new Date().getFullYear()} Okhuysen Dev.
-        </p>
-        <p class="text-gray-500 text-sm">
-          {URL === "/en/" ? "Made with ❤️ " : "Hecho con ❤️ "}
-        </p>
-      </section>
+
+    <footer class="border-t border-gray-100 mt-20 py-10">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <p class="font-semibold text-sm text-gray-900">Kevin Okhuysen</p>
+          <p class="text-xs text-gray-400 mt-0.5">Full Stack Developer · Tijuana, México</p>
+        </div>
+        <div class="flex items-center gap-4 text-xs text-gray-400">
+          <a href="https://okhuysen.dev" target="_blank" class="hover:text-orange-500 transition-colors">okhuysen.dev</a>
+          <a href="https://github.com/kevin180317" target="_blank" class="hover:text-orange-500 transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/kevin-ortega-9abb6b235" target="_blank" class="hover:text-orange-500 transition-colors">LinkedIn</a>
+        </div>
+      </div>
+      <p class="text-xs text-gray-300 mt-6">&copy; {new Date().getFullYear()} Kevin Okhuysen. {isEn ? "All rights reserved." : "Todos los derechos reservados."}</p>
     </footer>
   </body>
 </html>
 
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  * {
-    font-family: "Geist Variable", sans-serif;
-  }
+  html { scroll-behavior: smooth; }
+  * { font-family: "Geist Variable", sans-serif; }
 </style>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>

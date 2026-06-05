@@ -1,286 +1,117 @@
 ---
 const { URL } = Astro.props;
+const isEn = URL === "/en/";
+
+const projects = [
+  {
+    name: "Akerlundh",
+    descES: "Landing page moderna para empresa de interiorismo en San Diego y Tijuana.",
+    descEN: "Modern landing page for an interior design company in San Diego and Tijuana.",
+    tags: ["Astro", "Tailwind"],
+    github: "https://github.com/Kevin180317/Akerlundh",
+    live: "https://akerlundhinteriorismo.com/",
+  },
+  {
+    name: "Transtime",
+    descES: "Landing page para empresa de transporte internacional y servicios logísticos.",
+    descEN: "Landing page for an international transport and logistics services company.",
+    tags: ["Astro", "Tailwind"],
+    github: "https://github.com/Kevin180317/Transtime",
+    live: "https://transtime.site/",
+  },
+  {
+    name: "PrometheusTij",
+    descES: "Landing page v2.0 para empresa de tecnología Prometheus Tijuana.",
+    descEN: "Landing page v2.0 for technology company Prometheus Tijuana.",
+    tags: ["JavaScript", "Astro"],
+    github: "https://github.com/Kevin180317/Prometheus2025",
+    live: "https://prometheustij.com",
+  },
+  {
+    name: "MACOTI",
+    descES: "Sitio web para empresa de servicios de maquinado CNC.",
+    descEN: "Website for a CNC machining services company.",
+    tags: ["Next.js", "Tailwind"],
+    github: "https://github.com/Kevin180317/MACOTI",
+    live: "https://macoti.com.mx/",
+  },
+  {
+    name: "Excellentia Foods",
+    descES: "Landing + dashboard empresarial integrado con QuickBooks Online / Intuit para gestión financiera, sincronizado con app Android para el flujo operativo.",
+    descEN: "Landing + business dashboard integrated with QuickBooks Online / Intuit for financial management, synced with an Android app for the full operational flow.",
+    tags: ["Express", "Node.js", "Android Studio", "QuickBooks"],
+    github: "https://github.com/Kevin180317",
+    live: "https://excellentiafoods.com",
+  },
+  {
+    name: "ScanEat",
+    descES: "App web para restaurantes: menús digitales QR, sistema de pedidos en tiempo real, KDS, facturación y reportes.",
+    descEN: "Web app for restaurants: QR digital menus, real-time order system, KDS, invoicing and reports.",
+    tags: ["Next.js", "React", "Tailwind"],
+    github: "https://github.com/Kevin180317",
+    live: "https://scaneat.mx/",
+  },
+];
 ---
 
-<section id="projects">
-  <h2 class="text-2xl font-bold text-orange-600 mb-6">
-    {URL === "/en/" ? "Projects" : "Proyectos"}
-  </h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- Akerlundh -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/Akerlundh"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          Akerlundh
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "🚀 Modern landing page built with Astro framework"
-            : "🚀 Landing page moderna construida con el framework Astro"
-        }
+<section id="projects" class="border-t border-gray-100 pt-12 pb-12 reveal">
+  <div class="flex items-end justify-between mb-8">
+    <div>
+      <p class="text-xs font-medium text-orange-500 tracking-widest uppercase mb-2">
+        {isEn ? "Open Source" : "Código Abierto"}
       </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >Astro</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >Landing Page</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
+      <h2 class="text-2xl font-bold text-gray-900">
+        {isEn ? "Projects" : "Proyectos"}
+      </h2>
     </div>
-
-    <!-- Transtime -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/Transtime"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          Transtime
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "⏰ Time management and productivity application built with Astro"
-            : "⏰ Aplicación de gestión de tiempo y productividad construida con Astro"
-        }
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >Astro</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >Time Management</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
-    </div>
-
-    <!--  Display_Oled -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/Display_Oled"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          Display_Oled
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "🎨 Portfolio de mis proyectos desarrollado en Astro y TailwindCSS."
-            : "🎨 Portfolio de mis proyectos desarrollado en Astro y TailwindCSS."
-        }
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >Astro</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >TailwindCSS</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >Portfolio</span
-        >
-        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
-    </div>
-
-    <!-- MACOTI -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/MACOTI"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          MACOTI
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "🏭 Macoti es una empresa que genera servicios de programación y diseño con máquinas CNC"
-            : "🏭 Macoti es una empresa que genera servicios de programación y diseño con máquinas CNC"
-        }
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >Astro</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >CNC</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >Business</span
-        >
-        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
-    </div>
-
-    <!-- Prometheus2025 -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/Prometheus2025"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          PrometheusTij
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "🔥 Landing page de PrometheusTj v2.0 - Modern web application"
-            : "🔥 Landingpage de PrometheusTj v2.0 - Aplicación web moderna"
-        }
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >JavaScript</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >Landing Page</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >v2.0</span
-        >
-        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
-    </div>
-
-    <!-- Colonias-Tijuana -->
-    <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200">
-      <div class="flex items-center gap-2 mb-3">
-        <a
-          href="https://github.com/Kevin180317/Colonias-Tijuana"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors"
-        >
-          Colonias-Tijuana
-        </a>
-        <svg
-          class="w-5 h-5 text-gray-600"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        {
-          URL === "/en/"
-            ? "🏙️ Geographic information system for neighborhoods in Tijuana, Mexico"
-            : "🏙️ Sistema de información geográfica para colonias de Tijuana, México"
-        }
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
-          >Geographic Data</span
-        >
-        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
-          >Tijuana</span
-        >
-        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
-          >Mexico</span
-        >
-        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded"
-          >Public</span
-        >
-      </div>
-    </div>
-  </div>
-
-  <div class="text-center mt-4 mb-8">
     <a
       href="https://okhuysen.dev/projects"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-orange-600 hover:text-orange-700 font-medium hover:underline"
+      class="text-sm text-gray-400 hover:text-orange-500 transition-colors flex items-center gap-1"
     >
-      {URL === "/en/" ? "See more: okhuysen.dev/" : "Ver más: okhuysen.dev/"}
+      {isEn ? "view all" : "ver todos"}
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
     </a>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {projects.map(p => (
+      <div class="group border border-gray-100 rounded-xl p-5 hover:border-orange-200 hover:shadow-sm transition-all duration-200">
+        <div class="flex items-start justify-between mb-3">
+          <h3 class="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
+            {p.name}
+          </h3>
+          <div class="flex gap-2 flex-shrink-0">
+            {p.live && (
+              <a href={p.live} target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-orange-500 transition-colors" aria-label="Live site">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            )}
+            <a href={p.github} target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-gray-800 transition-colors" aria-label="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">
+          {isEn ? p.descEN : p.descES}
+        </p>
+
+        <div class="flex flex-wrap gap-1.5">
+          {p.tags.map(tag => (
+            <span class="px-2 py-0.5 text-xs border border-gray-100 rounded-md text-gray-500">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </section>

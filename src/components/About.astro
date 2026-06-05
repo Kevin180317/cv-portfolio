@@ -1,54 +1,45 @@
 ---
 const { URL } = Astro.props;
+const isEn = URL === "/en/";
 
-function getYearsSince(startYear: number): number {
-  const now = new Date();
-  const years = now.getFullYear() - startYear;
-  const month = now.getMonth() + 1;
-  return month >= 1 ? years : years - 1;
-}
-
+function getYearsSince(y: number) { return new Date().getFullYear() - y; }
 const expYears = getYearsSince(2021);
+
+const areas = isEn
+  ? ["Web Development","Mobile Development","Frontend","Backend","REST APIs","Databases","SEO","Analytics","Auth/Credentials","cPanel","Version Control"]
+  : ["Desarrollo Web","Desarrollo Móvil","Frontend","Backend","APIs REST","Bases de Datos","SEO","Analytics","Autenticación","cPanel","Control de Versiones"];
 ---
 
-<section>
-  <h2 class="text-2xl font-bold text-orange-600 mb-4">
-    {URL === "/en/" ? "About Me" : "Sobre Mí"}
+<section class="border-t border-gray-100 pt-12 pb-12 reveal">
+  <p class="text-xs font-medium text-orange-500 tracking-widest uppercase mb-4">
+    {isEn ? "About" : "Sobre Mí"}
+  </p>
+
+  <h2 class="text-2xl font-bold text-gray-900 mb-6">
+    {isEn ? "Who I am" : "Quién soy"}
   </h2>
 
-  <p class="text-lg text-gray-600 leading-relaxed text-start mb-4">
-    {
-      URL === "/en/"
+  <div class="space-y-4 text-gray-600 leading-relaxed mb-8">
+    <p>
+      {isEn
         ? `+${expYears} years of professional experience as a Web and Mobile App Developer, with a specialized focus on digital solutions for the medical and dental sector. Based in Tijuana, Mexico.`
-        : `+${expYears} años de experiencia profesional como Desarrollador Web y de Aplicaciones Móviles, con un enfoque especializado en soluciones digitales para el sector médico y dental. Radicado en Tijuana, México.`
-    }
-  </p>
-
-  <p class="text-lg text-gray-600 leading-relaxed text-start mb-4">
-    {
-      URL === "/en/"
+        : `+${expYears} años de experiencia profesional como Desarrollador Web y de Aplicaciones Móviles, con un enfoque especializado en soluciones digitales para el sector médico y dental. Radicado en Tijuana, México.`}
+    </p>
+    <p>
+      {isEn
         ? "I work with frontend ecosystems using React, Astro and Next.js, as well as backend environments with Node.js and Express. Experience in databases and deployment of modern, scalable solutions."
-        : "Manejo ecosistemas frontend con React, Astro y Next.js, así como entornos backend con Node.js y Express. Experiencia en bases de datos y despliegue de soluciones modernas y escalables."
-    }
-  </p>
+        : "Manejo ecosistemas frontend con React, Astro y Next.js, así como entornos backend con Node.js y Express. Experiencia en bases de datos y despliegue de soluciones modernas y escalables."}
+    </p>
+  </div>
 
-  <p class="text-lg text-gray-600 leading-relaxed text-start mb-8">
-    {
-      URL === "/en/"
-        ? "Passionate about creating fast, functional web experiences, with a focus on accessibility, performance, and good development practices."
-        : "Apasionado por crear experiencias web rápidas y funcionales, con enfoque en accesibilidad, rendimiento y buenas prácticas de desarrollo."
-    }
+  <p class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-3">
+    {isEn ? "Areas of expertise" : "Áreas de especialización"}
   </p>
-
-  <h3 class="text-2xl font-bold text-orange-600 mb-4">
-    {URL === "/en/" ? "Areas of Expertise" : "Áreas de Especialización"}
-  </h3>
-
-  <p class="text-gray-600 leading-relaxed mb-8">
-    {
-      URL === "/en/"
-        ? "Web Development • Mobile Development • Frontend • Backend • CSS Frameworks • API Rest • Databases • SEO • Analytics • Version Control • Authentication • Credentials • Cpanel"
-        : "Desarrollo Web • Desarrollo Móvil • Frontend • Backend • Frameworks CSS • API Rest • Bases de Datos • SEO • Analytics • Control de Versiones • Autenticación • Credenciales • Cpanel"
-    }
-  </p>
+  <div class="flex flex-wrap gap-2">
+    {areas.map(area => (
+      <span class="px-3 py-1 text-xs font-medium border border-gray-200 rounded-full text-gray-600 hover:border-orange-300 hover:text-orange-600 transition-colors">
+        {area}
+      </span>
+    ))}
+  </div>
 </section>
